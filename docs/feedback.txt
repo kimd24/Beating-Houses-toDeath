@@ -1,0 +1,9 @@
+primary key for Home (Address) may have multiple values for same address
+   >>consider composite or surrogate key
+Points of Interests (primary key) may not be unique
+
+Primary keys are all strings, consider surrogate key
+
+check postgresql documentation for valid code
+
+Security against injection attacks
