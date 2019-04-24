@@ -5,17 +5,17 @@ CREATE_HOMES_TABLE = """
         building_class TEXT,
         sale_price INT,
         square_footage SMALLINT,
-        residential_units SMALLINT
-    )
-
-"""
+        residential_units SMALLINT,
+        year_built SMALLINT,
+        borough TEXT REFERENCES boroughs(name)
+    )"""
 
 CREATE_BOROUGHS_TABLE = """ 
     CREATE TABLE boroughs(
     name TEXT PRIMARY KEY,
     grad_rate SMALLINT,
     crime_rate SMALLINT
-    ) """
+    )"""
 
 CREATE_INTEREST_POINTS_TABLE = """
     CREATE TABLE interest_points(
@@ -23,5 +23,4 @@ CREATE_INTEREST_POINTS_TABLE = """
         coordinate POINT,
         name TEXT,
         borough TEXT REFERENCES boroughs(name)
-    )
-"""
+    )"""

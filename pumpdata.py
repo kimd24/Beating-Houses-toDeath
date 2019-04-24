@@ -15,7 +15,7 @@ def drop_tables(cur):
 def main():
     conn = psycopg2.connect("dbname=testdb user=postgres")
     cur = conn.cursor()
-    #drop_tables(cur)
+    drop_tables(cur)
     create_tables(cur)
 
 
