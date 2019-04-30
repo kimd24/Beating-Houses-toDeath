@@ -1,3 +1,19 @@
+INSERT_HOME = """
+    INSERT INTO home(%s) VALUES (%s)
+"""
+
+INSERT_INTEREST_POINT = """
+    INSERT INTO interest_points(coordinate, name, borough) VALUES (%s, %s, %s)
+"""
+
+HOME_COLS = ('address', 'building_class', 'sale_price', 'square_footage', 'residential_units', 'year_built', 'borough')
+
+INTEREST_POINT_COLS = ('coordinate', 'name', 'borough')
+
+COPY = """
+    
+"""
+
 CREATE_HOMES_TABLE = """
     CREATE TABLE homes(
         id SERIAL PRIMARY KEY,
