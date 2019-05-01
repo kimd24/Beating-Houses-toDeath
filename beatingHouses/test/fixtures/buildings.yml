@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  buildingCategory: MyString
+  price: 1.5
+  sqFoot: 1.5
+  units: 1
+  year: 1
+  borough: MyString
+
+two:
+  address: MyString
+  buildingCategory: MyString
+  price: 1.5
+  sqFoot: 1.5
+  units: 1
+  year: 1
+  borough: MyString
