@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BeatingHouses</title>
+    <title>Housing Portal</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+   <body>
+    <%= render 'shared/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
+ 
 </html>
