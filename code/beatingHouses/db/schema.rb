@@ -10,27 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_233230) do
+ActiveRecord::Schema.define(version: 2019_05_07_044954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boroughs", force: :cascade do |t|
     t.string "name"
-    t.float "gradRate"
-    t.float "crimeRate"
+    t.float "grad_rate"
+    t.float "crime_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "buildings", force: :cascade do |t|
     t.string "address"
-    t.string "buildingCategory"
+    t.string "building_category"
     t.float "price"
-    t.float "sqFoot"
+    t.float "square_foot"
     t.integer "units"
     t.integer "year"
-    t.string "borough"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "borough_id"
@@ -40,7 +39,6 @@ ActiveRecord::Schema.define(version: 2019_05_02_233230) do
     t.string "name"
     t.float "lat"
     t.float "long"
-    t.string "borough"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "borough_id"
