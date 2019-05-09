@@ -9,7 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+   <body>
+    <%= render 'shared/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
+  
 </html>
