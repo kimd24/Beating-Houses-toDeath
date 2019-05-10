@@ -8,13 +8,11 @@
 
 require 'csv'
 
+=begin
 Building.destroy_all
 PointOfInterest.destroy_all
+=end
 Borough.destroy_all
-
-#Borough.create!(name: "bronx", gradRate: 40.23234, crimeRate: 12.12039)
-#Building.create!(address: "something street", buildingCategory: "some category", price: 120394.12, sqFoot: 1230923, units: 500, year: 2000, borough: "bronx", borough_id:1)
-#PointOfInterest.create!(name: "some park", lat: 123.12312312, long: 1209.123123, borough: "bronx", borough_id:1)
 
 csv_text = File.read(Rails.root.join("lib", "seeds", "borough-data-test.csv"))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')

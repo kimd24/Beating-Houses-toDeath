@@ -1,2 +1,13 @@
-<h1>Buildings#show</h1>
-<p>Find me in app/views/buildings/show.html.erb</p>
+<div>
+<h1>Building Profile<h1>
+</div>
+<p><b>Address: </b><%=@building.address %></p>
+<p><b>Building Category: </b><%=@building.building_category %></p>
+<p><b>Price: </b><%=number_to_currency(@building.price, :unit => "$") %></p>
+<p><b>Square foot: </b><%=@building.square_foot %></p>
+<p><b>Units: </b><%=@building.units %></p>
+<p><b>Year Constructed: </b><%=@building.year %></p>
+<p><b>Borough: </b><%=@building.borough.name %></p>
+<p><b>Graduation Rate of Borough: </b><%=@building.borough.grad_rate %></p>
+<p><b>Crime Rate of Borough: </b><%=@building.borough.crime_rate %></p>
+
