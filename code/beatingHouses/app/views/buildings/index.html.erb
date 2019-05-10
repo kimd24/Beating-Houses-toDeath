@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <head>
  <style>
      .body {
@@ -10,8 +9,6 @@
       }
   </style>
 </head>
-=======
->>>>>>> 22a3a296c9bbc1c60c64eb27122726030209072d
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 offset-sm-2">
@@ -21,28 +18,21 @@
         <%= f.input :query, input_html: {value: ""} %>
         <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
-<<<<<<< HEAD
       <table class="body"  border="1">
        <tr>
           <th>Address</th>
           <th>Prices</th>
           <th>House Details</th>
        </tr>
+      <% i = 0 %>
       <% @buildings.each do |building| %>
         <tr>
           <td><%= building.address %></h3></td>
           <td>$<%= building.price %></td>
           <td><%= link_to 'Show Details', building_path(building), class: 'link li    nk--underlined' %></td>
-         </tr>
-=======
-      <% i = 0 %>
-      <% @buildings.each do |building| %>
-        <h3><%= building.address %></h3>
-        <p><%= link_to 'Show Details', building_path(building), class: 'link link--underlined' %></p>
-        <p><%= building.price %></p>
-        <% i+=1 %>
-	<% break if i == 100 %>
->>>>>>> 22a3a296c9bbc1c60c64eb27122726030209072d
+      <% i+=1 %>
+      <% break if i == 100 %>   
+      </tr>
       <% end %>
       </table>
     </div>
