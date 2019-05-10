@@ -6,14 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'geokit'
 require 'csv'
 
-=begin
-Building.destroy_all
-PointOfInterest.destroy_all
-=end
-Borough.destroy_all
+include GeoKit::Geocoders
 
+Building.destroy_all
+#PointOfInterest.destroy_all
+#Borough.destroy_all
+=begin
 csv_text = File.read(Rails.root.join("lib", "seeds", "borough-data-test.csv"))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
@@ -42,17 +43,20 @@ csv.each do |row|
     end
   end
 end
-
+=end
 csv_text = File.read(Rails.root.join("lib", "seeds", "houses.csv"))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   borough = Borough.find_by(name: row['borough'])
   borough.buildings.create(address: row['address']) do |b|
+    coords = MultiGeocoder.geocode(row['address'])
     b.building_category = row['building_class']
     b.price = row['sale_price']
     b.square_foot = row['square_footage']
     b.units = row['residential_units']
     b.year = row['year_built']
+    b.lat = coords.lat
+    b.long = coords.lng
   end
 end
 
