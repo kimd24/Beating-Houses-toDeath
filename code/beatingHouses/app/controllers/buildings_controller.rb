@@ -4,7 +4,10 @@ class BuildingsController < ApplicationController
     @search = params['search']
     if @search.present?
       @query = @search['query']
-      @buildings = Building.where('address ILIKE ?', "%#{@query}%") 
+      high = @query.to_i + 10000
+      low = @query.to_i - 10000
+      #@buildings = Building.where('address ILIKE ?', "%#{@query}%") 
+      @buildings = Building.where('price >= ? AND price <= ?', "#{low}", "#{high}")
     end
   end
 
