@@ -1,2 +1,37 @@
-<h1>Housing Portal</h1>
-<p><%= @buildings %></p>
+<head>
+ <style>
+     .body {
+        border: black;
+        width: 1200px;
+        margin: 10px auto;
+        height: 50px;
+	padding: 15px;
+      }
+  </style>
+</head>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2">
+      <h2>Search for houses</h2>
+      <hr>
+      <%= simple_form_for :search, url: root_path, method: "GET", html: {class: "form-inline" } do |f| %>
+        <%= f.input :query, input_html: {value: ""} %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+      <table class="body"  border="1">
+       <tr>
+          <th>Address</th>
+          <th>Prices</th>
+          <th>House Details</th>
+       </tr>
+      <% @buildings.each do |building| %>
+        <tr>
+          <td><%= building.address %></h3></td>
+          <td>$<%= building.price %></td>
+          <td><%= link_to 'Show Details', building_path(building), class: 'link li    nk--underlined' %></td>
+         </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
